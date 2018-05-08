@@ -1,4 +1,4 @@
-函数参数的默认值
+1.函数参数的默认值
 function Point(x = 0, y = 0) {
   this.x = x;
   this.y = y;
@@ -18,7 +18,7 @@ foo({x: 1}) // 1 5
 foo({x: 1, y: 2}) // 1 2
 foo() // TypeError: Cannot read property 'x' of undefined
 
-参数默认值的位置	
+2.参数默认值的位置	
 通常情况下，定义了默认值的参数，应该是函数的尾参数。因为这样比较容易看出来，到底省略了哪些参数。如果非尾部的参数设置默认值，实际上这个参数是没法省略的。
 
 // 例一
@@ -41,7 +41,7 @@ f(1) // [1, 5, undefined]
 f(1, ,2) // 报错
 f(1, undefined, 2) // [1, 5, 2]
 
-作用域
+3.作用域
 一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）。等到初始化结束，这个作用域就会消失。这种语法行为，在不设置参数默认值时，是不会出现的。
 
 var x = 1;
@@ -52,7 +52,7 @@ function f(x, y = x) {
 
 f(2) // 2
 
-rest 参数 
+4.rest 参数 
 ES6 引入 rest 参数（形式为...变量名），用于获取函数的多余参数，这样就不需要使用arguments对象了。rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。
 
 function add(...values) {
@@ -75,13 +75,13 @@ function sortNumbers() {
 // rest参数的写法
 const sortNumbers = (...numbers) => numbers.sort();
 
-name 属性 
+5.name 属性 
 函数的name属性，返回该函数的函数名。
 
 function foo() {}
 foo.name // "foo"
 
-箭头函数
+6.箭头函数
 基本用法
 ES6 允许使用“箭头”（=>）定义函数。
 
